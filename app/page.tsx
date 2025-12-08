@@ -377,10 +377,10 @@ export default function HomePage() {
         <div className="container">
           <div className="services-header">
             <h2 className="section-title">Our Services</h2>
-            <div className="services-navigation">
+            {/* <div className="services-navigation">
               <div className="swiper-button-prev services-nav-prev"></div>
               <div className="swiper-button-next services-nav-next"></div>
-            </div>
+            </div> */}
           </div>
           <Swiper
             modules={[Navigation, Pagination]}
@@ -396,8 +396,8 @@ export default function HomePage() {
                 spaceBetween: 24,
               },
               1024: {
-                slidesPerView: 2.3,
-                spaceBetween: 24,
+                slidesPerView: 3,
+                spaceBetween: 16,
               },
             }}
             navigation={{
