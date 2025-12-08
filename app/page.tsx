@@ -1,6 +1,11 @@
 "use client"
 
 import { useEffect, useRef } from "react"
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Navigation, Pagination } from "swiper/modules"
+import "swiper/css"
+import "swiper/css/navigation"
+import "swiper/css/pagination"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 
@@ -83,7 +88,7 @@ export default function HomePage() {
               AI Mission designs practical AI training and systems for Indian schools, colleges, and businesses. No
               jargon. No theatrics. Clear use-cases, working workflows, and measurable results.
             </p>
-            <div className="hero-stats">
+            {/* <div className="hero-stats">
               <div className="hero-stat-item">
                 <div className="hero-stat-number">5x</div>
                 <div className="hero-stat-label">Sales Increase</div>
@@ -98,7 +103,7 @@ export default function HomePage() {
                 <div className="hero-stat-number">100+</div>
                 <div className="hero-stat-label">Institutions</div>
               </div>
-            </div>
+            </div> */}
             <div className="hero-buttons">
               <button className="primary-button large" onClick={handleGetStartedClick}>
                 Start Your AI Journey
@@ -124,65 +129,64 @@ export default function HomePage() {
             {/* First set of logos */}
             <div className="marquee-item">
               <div className="company-logo">
-                <img src="https://www.soulfreeze.com/wp-content/uploads/2021/09/SF-Logo-white.png" alt="Soul Freeze" />
+                <img src="images/l1.jpg" alt="Soul Freeze" />
               </div>
             </div>
             <div className="marquee-item">
               <div className="company-logo">
-                <div className="logo-text">Draw Design</div>
+              <img src="images/l2.jpg" alt="Soul Freeze" />
               </div>
             </div>
             <div className="marquee-item">
               <div className="company-logo">
-                <img
-                  src="https://uicaviotech.com/wp-content/uploads/2011/11/cropped-cropped-logo-1.png"
-                  alt="UIC Aviotech"
-                />
+              <img src="images/l3.jpg" alt="Soul Freeze" />
               </div>
             </div>
             <div className="marquee-item">
               <div className="company-logo">
-                <img
-                  src="https://jar.tsrs.org/wp-content/themes/tsrsakj/images/logo-light.svg"
-                  alt="The Shri Ram School"
-                />
+              <img src="images/l4.jpg" alt="Soul Freeze" />
               </div>
             </div>
-            <div className="marquee-item">
-              <div className="company-logo">
-                <div className="logo-text">DPS RK Puram</div>
-              </div>
-            </div>
+           
             {/* Duplicate set for seamless loop */}
             <div className="marquee-item">
               <div className="company-logo">
-                <img src="https://www.soulfreeze.com/wp-content/uploads/2021/09/SF-Logo-white.png" alt="Soul Freeze" />
+                <img src="images/l1.jpg" alt="Soul Freeze" />
               </div>
             </div>
             <div className="marquee-item">
               <div className="company-logo">
-                <div className="logo-text">Draw Design</div>
+              <img src="images/l2.jpg" alt="Soul Freeze" />
               </div>
             </div>
             <div className="marquee-item">
               <div className="company-logo">
-                <img
-                  src="https://uicaviotech.com/wp-content/uploads/2011/11/cropped-cropped-logo-1.png"
-                  alt="UIC Aviotech"
-                />
+              <img src="images/l3.jpg" alt="Soul Freeze" />
               </div>
             </div>
             <div className="marquee-item">
               <div className="company-logo">
-                <img
-                  src="https://jar.tsrs.org/wp-content/themes/tsrsakj/images/logo-light.svg"
-                  alt="The Shri Ram School"
-                />
+              <img src="images/l4.jpg" alt="Soul Freeze" />
               </div>
             </div>
             <div className="marquee-item">
               <div className="company-logo">
-                <div className="logo-text">DPS RK Puram</div>
+                <img src="images/l1.jpg" alt="Soul Freeze" />
+              </div>
+            </div>
+            <div className="marquee-item">
+              <div className="company-logo">
+              <img src="images/l2.jpg" alt="Soul Freeze" />
+              </div>
+            </div>
+            <div className="marquee-item">
+              <div className="company-logo">
+              <img src="images/l3.jpg" alt="Soul Freeze" />
+              </div>
+            </div>
+            <div className="marquee-item">
+              <div className="company-logo">
+              <img src="images/l4.jpg" alt="Soul Freeze" />
               </div>
             </div>
           </div>
@@ -371,70 +375,106 @@ export default function HomePage() {
         }}
       >
         <div className="container">
-          <h2 className="section-title">Our Services</h2>
-          <div className="services-grid-three">
-            <div className="service-card">
-              <div className="service-image">
-                <img src="/teachers-using-ai-technology-in-classroom-with-tab.jpg" alt="AI in Education" />
-              </div>
-              <div className="service-content">
-                <h3 className="service-title">AI Bootcamps for Educational Institutions</h3>
-                <p className="service-description">
-                  Schools, colleges, universities, and coaching institutes get their teachers and operations teams using
-                  AI daily.
-                </p>
-                <ul className="service-list">
-                  <li>Faculty AI Bootcamp - Lesson plans, assessments, personalized learning</li>
-                  <li>School/College Operations - Admissions, marketing, fee follow-ups</li>
-                  <li>Leadership Tracks - Decision frameworks, metrics, vendor selection</li>
-                </ul>
-                <div className="service-format">
-                  <strong>Format:</strong> 1-day primers, 2-4 week sprints, custom cohorts
-                </div>
-              </div>
-            </div>
-
-            <div className="service-card">
-              <div className="service-image">
-                <img src="/business-professionals-using-ai-analytics-dashboar.jpg" alt="AI Consulting" />
-              </div>
-              <div className="service-content">
-                <h3 className="service-title">AI Consulting for Digital Transformation</h3>
-                <p className="service-description">
-                  Indian SMEs and mid-market companies use AI to reduce manual work, tighten margins, and improve
-                  customer experience.
-                </p>
-                <ul className="service-list">
-                  <li>Diagnostic & Roadmap - Map processes, identify high-leverage use-cases</li>
-                  <li>Design & Implementation - Build practical workflows with existing tools</li>
-                  <li>Training & Change Management - Hands-on training with clear manuals</li>
-                </ul>
-                <div className="service-format">
-                  <strong>Outcome:</strong> Fewer manual loops, faster decisions, cleaner dashboards
-                </div>
-              </div>
-            </div>
-
-            <div className="service-card">
-              <div className="service-image">
-                <img src="/ai-automation-workflow-with-connected-systems-and-.jpg" alt="AI Systems" />
-              </div>
-              <div className="service-content">
-                <h3 className="service-title">Custom AI Systems & Automation Assets</h3>
-                <p className="service-description">
-                  Beyond bootcamps and consulting, we build and hand over concrete AI assets.
-                </p>
-                <ul className="service-list">
-                  <li>Custom AI Workspaces - Taskade, Notion, templates for specific workflows</li>
-                  <li>WhatsApp Automations - Lead capture, FAQ handling, daily digests</li>
-                  <li>Prompt Libraries - Role-specific and industry-specific playbooks</li>
-                </ul>
-                <div className="service-format">
-                  <strong>Deliverable:</strong> Reusable assets with documentation for sustainability
-                </div>
-              </div>
+          <div className="services-header">
+            <h2 className="section-title">Our Services</h2>
+            <div className="services-navigation">
+              <div className="swiper-button-prev services-nav-prev"></div>
+              <div className="swiper-button-next services-nav-next"></div>
             </div>
           </div>
+          <Swiper
+            modules={[Navigation, Pagination]}
+            spaceBetween={24}
+            slidesPerView={1.2}
+            breakpoints={{
+              640: {
+                slidesPerView: 1.2,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 24,
+              },
+              1024: {
+                slidesPerView: 2.3,
+                spaceBetween: 24,
+              },
+            }}
+            navigation={{
+              nextEl: ".services-nav-next",
+              prevEl: ".services-nav-prev",
+            }}
+            // pagination={{ clickable: true }}
+            className="services-swiper"
+          >
+            <SwiperSlide>
+              <div className="service-card">
+                <div className="service-image">
+                  <img src="/teachers-using-ai-technology-in-classroom-with-tab.jpg" alt="AI in Education" />
+                </div>
+                <div className="service-content">
+                  <h3 className="service-title">AI Bootcamps for Educational Institutions</h3>
+                  <p className="service-description">
+                    Schools, colleges, universities, and coaching institutes get their teachers and operations teams using
+                    AI daily.
+                  </p>
+                  <ul className="service-list">
+                    <li>Faculty AI Bootcamp - Lesson plans, assessments, personalized learning</li>
+                    <li>School/College Operations - Admissions, marketing, fee follow-ups</li>
+                    <li>Leadership Tracks - Decision frameworks, metrics, vendor selection</li>
+                  </ul>
+                  <div className="service-format">
+                    <strong>Format:</strong> 1-day primers, 2-4 week sprints, custom cohorts
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div className="service-card">
+                <div className="service-image">
+                  <img src="/business-professionals-using-ai-analytics-dashboar.jpg" alt="AI Consulting" />
+                </div>
+                <div className="service-content">
+                  <h3 className="service-title">AI Consulting for Digital Transformation</h3>
+                  <p className="service-description">
+                    Indian SMEs and mid-market companies use AI to reduce manual work, tighten margins, and improve
+                    customer experience.
+                  </p>
+                  <ul className="service-list">
+                    <li>Diagnostic & Roadmap - Map processes, identify high-leverage use-cases</li>
+                    <li>Design & Implementation - Build practical workflows with existing tools</li>
+                    <li>Training & Change Management - Hands-on training with clear manuals</li>
+                  </ul>
+                  <div className="service-format">
+                    <strong>Outcome:</strong> Fewer manual loops, faster decisions, cleaner dashboards
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div className="service-card">
+                <div className="service-image">
+                  <img src="/ai-automation-workflow-with-connected-systems-and-.jpg" alt="AI Systems" />
+                </div>
+                <div className="service-content">
+                  <h3 className="service-title">Custom AI Systems & Automation Assets</h3>
+                  <p className="service-description">
+                    Beyond bootcamps and consulting, we build and hand over concrete AI assets.
+                  </p>
+                  <ul className="service-list">
+                    <li>Custom AI Workspaces - Taskade, Notion, templates for specific workflows</li>
+                    <li>WhatsApp Automations - Lead capture, FAQ handling, daily digests</li>
+                    <li>Prompt Libraries - Role-specific and industry-specific playbooks</li>
+                  </ul>
+                  <div className="service-format">
+                    <strong>Deliverable:</strong> Reusable assets with documentation for sustainability
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          </Swiper>
         </div>
       </section>
 
