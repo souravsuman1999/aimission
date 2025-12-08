@@ -1239,6 +1239,9 @@ img {
   .mobile-menu-toggle {
     display: block;
   }
+  .services-grid{
+    flex-direction: column;
+  }
 
   .desktop-cta {
     display: none;

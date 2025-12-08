@@ -1135,10 +1135,9 @@ img {
 }
 
 .services-grid {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
   margin-top: 32px;
-  display: grid;
+  display: flex;
 }
 
 .service-card {
@@ -1656,6 +1655,10 @@ img {
 @media (max-width: 768px) {
   .mobile-menu-toggle {
     display: block;
+  }
+
+  .services-grid {
+    flex-direction: column;
   }
 
   .desktop-cta {
