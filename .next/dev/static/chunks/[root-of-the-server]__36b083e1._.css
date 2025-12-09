@@ -1298,7 +1298,6 @@ img {
 
 .practitioners-grid {
   justify-content: center;
-  align-items: center;
   gap: 40px;
   margin-bottom: 60px;
   display: flex;
@@ -1308,6 +1307,7 @@ img {
   background: #ffffff08;
   border: 1px solid #ffffff1a;
   border-radius: 12px;
+  flex: 1;
   transition: all .3s;
   overflow: hidden;
 }

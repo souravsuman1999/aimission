@@ -457,10 +457,9 @@ export default function HomePage() {
               </div>
               <div className="practitioner-info">
                 <h3 className="practitioner-name">Rishabh</h3>
-                <p className="practitioner-title">Co-Founder & AI Strategist</p>
+                {/* <p className="practitioner-title">Co-Founder & Education Expert</p> */}
                 <p className="practitioner-bio">
-                  Deep expertise in schools management and technology-focused mindset. Specializes in helping
-                  organizations leverage AI for transformative business results.
+                An MIT Sloan alumnus, brings over 17 years of experience in education consulting. Recognised among the top global MBA admissions consultants, he has guided 500+ candidates to admits at Harvard, Stanford, Wharton, and other leading programmes—with a 95% success rate at M7 schools. His perspectives on education and AI have been featured in Indian and international media, including Forbes. His AI work extends beyond admissions: he has co-developed adaptive AI curricula now reaching over 20,000 K-12 learners, and leads board-level AI pilots that help organisations surface strategic insights and free up leadership capacity.
                 </p>
               </div>
             </div>
@@ -470,11 +469,10 @@ export default function HomePage() {
                 <img src="/images/image.png" alt="Ma'am" />
               </div>
               <div className="practitioner-info">
-                <h3 className="practitioner-name">Swati</h3>
-                <p className="practitioner-title">Co-Founder & Education Expert</p>
+                <h3 className="practitioner-name">Swati Gupta</h3>
+                {/* <p className="practitioner-title">Co-Founder & Education Expert</p> */}
                 <p className="practitioner-bio">
-                  Extensive experience in educational institutions and business operations with a practical approach to
-                  AI implementation that delivers real-world results.
+                Co-Founder and Managing Partner of GyanOne and Founder of AIMission, has been instrumental in building GyanOne into a globally ranked admissions consultancy—currently #4 worldwide for Ivy League placements. Over 17 years, she has helped secure 500+ admits to the world's top 10 MBA programmes, with 90% of candidates winning scholarships totalling hundreds of crores. She designed GyanOne's industry-leading interview preparation methodology, drawing on an extensive network of Deans and Admissions Directors across top business schools. Through AIMission, she now leads educational transformation across K-12 and higher education institutions, leveraging a wide network in the Indian education ecosystem to design adaptive learning systems, operational frameworks, and future-ready curriculum.
                 </p>
               </div>
             </div>

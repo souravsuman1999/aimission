@@ -792,7 +792,6 @@ img {
 .practitioners-grid {
   display: flex;
   gap: 40px;
-  align-items: center;
   justify-content: center;
   margin-bottom: 60px;
 }
@@ -803,6 +802,7 @@ img {
   border-radius: 12px;
   overflow: hidden;
   transition: all 0.3s ease;
+  flex: 1;
 }
 
 .practitioner-card:hover {
