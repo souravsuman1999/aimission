@@ -884,7 +884,7 @@ img {
 
 .practitioner-image {
   width: 100%;
-  height: 400px;
+  height: 350px;
   overflow: hidden;
   background: #000000;
 }
@@ -1070,76 +1070,152 @@ img {
   line-height: 1.6;
 }
 
-/* Added marquee section styles */
-.marquee-section {
+/* Trusted Cards Section Styles */
+.trusted-cards-section {
   padding: 100px 0;
   background: #090909;
-  overflow: hidden;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.marquee-wrapper {
+.trusted-cards-grid {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+
+.trusted-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
   overflow: hidden;
-  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: cardFadeIn 0.6s ease forwards;
+  max-width: 32%;
   width: 100%;
-  margin-top: 62px;
 }
 
-.marquee-content {
-  display: flex;
-  animation: marquee 40s linear infinite;
-  width: fit-content;
+.trusted-card:nth-child(1) {
+  animation-delay: 0.1s;
 }
 
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
+.trusted-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.trusted-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.trusted-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.trusted-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+@keyframes cardFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-
-  100% {
-    transform: translateX(-50%);
-  }
 }
 
-.marquee-item {
-  flex-shrink: 0;
-  padding: 0 60px;
+.trusted-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(79, 70, 229, 0.5);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 12px 40px rgba(79, 70, 229, 0.3);
+}
+
+.trusted-card-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: #0a0a0a;
+  position: relative;
+}
+
+.trusted-card-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.trusted-card:hover .trusted-card-image::after {
+  opacity: 1;
+}
+
+.trusted-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.trusted-card:hover .trusted-card-image img {
+  transform: scale(1.1);
+}
+
+.trusted-card-content {
+  flex-direction: column;
+  flex: 1;
+  padding: 16px 14px;
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.company-logo {
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  padding: 10px;
-  border-radius: 10px;
-  border: 2px solid #241f7448;
+.trusted-card-heading {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #ffffff;
+  transition: color 0.3s ease;
 }
 
-/* .company-logo:hover {
-  filter: grayscale(0%) brightness(1);
-} */
-
-.company-logo img {
-  max-height: 60px;
-  max-width: 180px;
-  object-fit: contain;
+.trusted-card:hover .trusted-card-heading {
+  color: #a5b4fc;
 }
 
-.logo-text {
-  font-size: 24px;
-  font-weight: 700;
+.trusted-card-subheading {
+  font-size: 15px;
   color: rgba(255, 255, 255, 0.7);
-  letter-spacing: 1px;
-  white-space: nowrap;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex: 1;
 }
 
-.company-logo:hover .logo-text {
-  color: rgba(255, 255, 255, 1);
+.trusted-card-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: #6366f1;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.trusted-card:hover .trusted-card-link {
+  color: #a5b4fc;
+  transform: translateX(4px);
+}
+
+.scroll-section.animate-in .trusted-card {
+  animation-play-state: running;
 }
 
 /* Redesigned footer styles */
@@ -1293,7 +1369,7 @@ img {
   font-size: 14px;
 }
 
-/* Mobile responsive styles for footer and marquee */
+/* Mobile responsive styles for footer and cards */
 @media (max-width: 1024px) {
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1311,6 +1387,11 @@ img {
   .mobile-menu-toggle {
     display: block;
   }
+
+  .trusted-card:hover{
+    box-shadow: none;
+  }
+
 
   .desktop-cta {
     display: none;
@@ -1444,42 +1525,34 @@ img {
     text-align: center;
   }
 
-  .marquee-item {
-    padding: 0 30px;
+  .trusted-cards-grid {
+    gap: 24px;
+    flex-direction: column;
+    flex-wrap: nowrap;
   }
-
-  .company-logo img {
-    max-height: 50px;
-    max-width: 140px;
+  
+  .trusted-card-image {
+    height: 180px;
   }
-
-  .logo-text {
+  .trusted-card {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .trusted-card-content {
+    padding: 20px;
+  }
+  
+  .trusted-card-heading {
     font-size: 20px;
   }
-}
-
-@media (max-width: 480px) {
-  .marquee-item {
-    padding: 0 20px;
-  }
-
-  .company-logo img {
-    max-height: 40px;
-    max-width: 120px;
-  }
-
-  .logo-text {
-    font-size: 18px;
-  }
-
-  .footer {
-    padding: 60px 0 24px;
-  }
-
-  .footer-social {
-    justify-content: flex-start;
+  
+  .trusted-card-subheading {
+    font-size: 14px;
   }
 }
+
+
 
 /* Scroll animations */
 @keyframes fadeInUp {

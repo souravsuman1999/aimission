@@ -33,7 +33,7 @@ export default function HomePage() {
   }
 
   const handleEmailContact = () => {
-    window.location.href = "mailto:contact@aimission.in"
+    window.location.href = "mailto:contact@aimission.co"
   }
 
   useEffect(() => {
@@ -116,79 +116,73 @@ export default function HomePage() {
         </div>
       </section>
 
-      
-      {/* Trusted By Companies Marquee */}
-      <section className="marquee-section">
+
+      {/* Trusted By Companies Cards */}
+      <section
+        className="trusted-cards-section scroll-section"
+        ref={(el) => {
+          sectionsRef.current[6] = el
+        }}
+      >
         <div className="container">
-          <h2 className="section-title" style={{ textAlign: "center", marginBottom: "32px" }}>
+          <h2 className="section-title" style={{ textAlign: "center", marginBottom: "48px" }}>
             Trusted By Leading Organizations
           </h2>
-        </div>
-        <div className="marquee-wrapper">
-          <div className="marquee-content">
-            {/* First set of logos */}
-            <div className="marquee-item">
-              <div className="company-logo">
-                <img src="images/l1.jpg" alt="Soul Freeze" />
+          <div className="trusted-cards-grid">
+            <a href="https://www.soulfreeze.com" target="_blank" rel="noopener noreferrer" className="trusted-card">
+              <div className="trusted-card-image">
+                <img src="images/scl5.png" alt="soulfreeze" />
               </div>
-            </div>
-            <div className="marquee-item">
-              <div className="company-logo">
-              <img src="images/l2.jpg" alt="Soul Freeze" />
+              <div className="trusted-card-content">
+                <h3 className="trusted-card-heading">Soulfreeze</h3>
+                <p className="trusted-card-subheading">Chef-approved artisanal gelatos and chocolates. Crafted from the world’s finest ingredients, perfected in every batch.</p>
+                <span className="trusted-card-link">Visit Website →</span>
               </div>
-            </div>
-            <div className="marquee-item">
-              <div className="company-logo">
-              <img src="images/l3.jpg" alt="Soul Freeze" />
+            </a>
+
+            <a href="https://drawdesign.in" target="_blank" rel="noopener noreferrer" className="trusted-card">
+              <div className="trusted-card-image">
+                <img src="images/scl2.png" alt="drawdesign" />
               </div>
-            </div>
-            <div className="marquee-item">
-              <div className="company-logo">
-              <img src="images/l4.jpg" alt="Soul Freeze" />
+              <div className="trusted-card-content">
+                <h3 className="trusted-card-heading">Drawdesign</h3>
+                <p className="trusted-card-subheading">Draw is a young idea driven design office operating in territories between art and architecture. </p>
+                <span className="trusted-card-link">Visit Website →</span>
               </div>
-            </div>
-           
-            {/* Duplicate set for seamless loop */}
-            <div className="marquee-item">
-              <div className="company-logo">
-                <img src="images/l1.jpg" alt="Soul Freeze" />
+            </a>
+
+            <a href="https://uicaviotech.com" target="_blank" rel="noopener noreferrer" className="trusted-card">
+              <div className="trusted-card-image">
+                <img src="images/scl3.png" alt="uicaviotech" />
               </div>
-            </div>
-            <div className="marquee-item">
-              <div className="company-logo">
-              <img src="images/l2.jpg" alt="Soul Freeze" />
+              <div className="trusted-card-content">
+                <h3 className="trusted-card-heading">UIC Aviotech Enterprises</h3>
+                <p className="trusted-card-subheading">Our team has an experience in manufacturing and servicing Aircraft Refuellers, and other ground support equipment since 1980. </p>
+                <span className="trusted-card-link">Visit Website →</span>
               </div>
-            </div>
-            <div className="marquee-item">
-              <div className="company-logo">
-              <img src="images/l3.jpg" alt="Soul Freeze" />
+            </a>
+
+            <a href="https://dpsrkp.net" target="_blank" rel="noopener noreferrer" className="trusted-card">
+              <div className="trusted-card-image">
+                <img src="images/scl4.png" alt="Delhi Public School R K Puram" />
               </div>
-            </div>
-            <div className="marquee-item">
-              <div className="company-logo">
-              <img src="images/l4.jpg" alt="Soul Freeze" />
+              <div className="trusted-card-content">
+                <h3 className="trusted-card-heading">Delhi Public School R K Puram</h3>
+                <p className="trusted-card-subheading">Delhi Public School, R K Puram is a co-educational day school affiliated to the Central Board of Secondary Education (CBSE), New Delhi.</p>
+                <span className="trusted-card-link">Visit Website →</span>
               </div>
-            </div>
-            <div className="marquee-item">
-              <div className="company-logo">
-                <img src="images/l1.jpg" alt="Soul Freeze" />
+            </a>
+
+            <a href="https://jar.tsrs.org" target="_blank" rel="noopener noreferrer" className="trusted-card">
+              <div className="trusted-card-image">
+                <img src="images/scl1.png" alt="The Shri Ram School" />
               </div>
-            </div>
-            <div className="marquee-item">
-              <div className="company-logo">
-              <img src="images/l2.jpg" alt="Soul Freeze" />
+              <div className="trusted-card-content">
+                <h3 className="trusted-card-heading">The Shri Ram School</h3>
+                <p className="trusted-card-subheading">The Shri Ram School Aravali campus nestles between high-rise apartments of the Hamilton Court Complex in DLF City Phase 4 in Gurgaon. </p>
+                <span className="trusted-card-link">Visit Website →</span>
               </div>
-            </div>
-            <div className="marquee-item">
-              <div className="company-logo">
-              <img src="images/l3.jpg" alt="Soul Freeze" />
-              </div>
-            </div>
-            <div className="marquee-item">
-              <div className="company-logo">
-              <img src="images/l4.jpg" alt="Soul Freeze" />
-              </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>
@@ -640,10 +634,10 @@ export default function HomePage() {
               For institution or business engagements, reach out to start your AI journey.
             </p>
             <div className="cta-buttons">
-             
+
               <div className="contact-info">
-                <a href="mailto:contact@aimission.in" className="contact-link">
-                  contact@aimission.in
+                <a href="mailto:contact@aimission.co" className="contact-link">
+                  contact@aimission.co
                 </a>
               </div>
             </div>
