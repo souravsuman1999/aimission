@@ -1,11 +1,6 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-import { Swiper, SwiperSlide } from "swiper/react"
-import { Navigation, Pagination } from "swiper/modules"
-import "swiper/css"
-import "swiper/css/navigation"
-import "swiper/css/pagination"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 
@@ -376,99 +371,69 @@ export default function HomePage() {
               <div className="swiper-button-next services-nav-next"></div>
             </div> */}
           </div>
-          <Swiper
-            modules={[Navigation, Pagination]}
-            spaceBetween={24}
-            slidesPerView={1.2}
-            breakpoints={{
-              640: {
-                slidesPerView: 1.2,
-                spaceBetween: 20,
-              },
-              768: {
-                slidesPerView: 2,
-                spaceBetween: 24,
-              },
-              1024: {
-                slidesPerView: 3,
-                spaceBetween: 16,
-              },
-            }}
-            navigation={{
-              nextEl: ".services-nav-next",
-              prevEl: ".services-nav-prev",
-            }}
-            // pagination={{ clickable: true }}
-            className="services-swiper"
-          >
-            <SwiperSlide>
-              <div className="service-card">
-                <div className="service-image">
-                  <img src="/teachers-using-ai-technology-in-classroom-with-tab.jpg" alt="AI in Education" />
-                </div>
-                <div className="service-content">
-                  <h3 className="service-title">AI Bootcamps for Educational Institutions</h3>
-                  <p className="service-description">
-                    Schools, colleges, universities, and coaching institutes get their teachers and operations teams using
-                    AI daily.
-                  </p>
-                  <ul className="service-list">
-                    <li>Faculty AI Bootcamp - Lesson plans, assessments, personalized learning</li>
-                    <li>School/College Operations - Admissions, marketing, fee follow-ups</li>
-                    <li>Leadership Tracks - Decision frameworks, metrics, vendor selection</li>
-                  </ul>
-                  <div className="service-format">
-                    <strong>Format:</strong> 1-day primers, 2-4 week sprints, custom cohorts
-                  </div>
+          <div className="services-grid">
+            <div className="service-card">
+              <div className="service-image">
+                <img src="/teachers-using-ai-technology-in-classroom-with-tab.jpg" alt="AI in Education" />
+              </div>
+              <div className="service-content">
+                <h3 className="service-title">AI Bootcamps for Educational Institutions</h3>
+                <p className="service-description">
+                  Schools, colleges, universities, and coaching institutes get their teachers and operations teams using AI
+                  daily.
+                </p>
+                <ul className="service-list">
+                  <li>Faculty AI Bootcamp - Lesson plans, assessments, personalized learning</li>
+                  <li>School/College Operations - Admissions, marketing, fee follow-ups</li>
+                  <li>Leadership Tracks - Decision frameworks, metrics, vendor selection</li>
+                </ul>
+                <div className="service-format">
+                  <strong>Format:</strong> 1-day primers, 2-4 week sprints, custom cohorts
                 </div>
               </div>
-            </SwiperSlide>
+            </div>
 
-            <SwiperSlide>
-              <div className="service-card">
-                <div className="service-image">
-                  <img src="/business-professionals-using-ai-analytics-dashboar.jpg" alt="AI Consulting" />
-                </div>
-                <div className="service-content">
-                  <h3 className="service-title">AI Consulting for Digital Transformation</h3>
-                  <p className="service-description">
-                    Indian SMEs and mid-market companies use AI to reduce manual work, tighten margins, and improve
-                    customer experience.
-                  </p>
-                  <ul className="service-list">
-                    <li>Diagnostic & Roadmap - Map processes, identify high-leverage use-cases</li>
-                    <li>Design & Implementation - Build practical workflows with existing tools</li>
-                    <li>Training & Change Management - Hands-on training with clear manuals</li>
-                  </ul>
-                  <div className="service-format">
-                    <strong>Outcome:</strong> Fewer manual loops, faster decisions, cleaner dashboards
-                  </div>
+            <div className="service-card">
+              <div className="service-image">
+                <img src="/business-professionals-using-ai-analytics-dashboar.jpg" alt="AI Consulting" />
+              </div>
+              <div className="service-content">
+                <h3 className="service-title">AI Consulting for Digital Transformation</h3>
+                <p className="service-description">
+                  Indian SMEs and mid-market companies use AI to reduce manual work, tighten margins, and improve customer
+                  experience.
+                </p>
+                <ul className="service-list">
+                  <li>Diagnostic & Roadmap - Map processes, identify high-leverage use-cases</li>
+                  <li>Design & Implementation - Build practical workflows with existing tools</li>
+                  <li>Training & Change Management - Hands-on training with clear manuals</li>
+                </ul>
+                <div className="service-format">
+                  <strong>Outcome:</strong> Fewer manual loops, faster decisions, cleaner dashboards
                 </div>
               </div>
-            </SwiperSlide>
+            </div>
 
-            <SwiperSlide>
-              <div className="service-card">
-                <div className="service-image">
-                  <img src="/ai-automation-workflow-with-connected-systems-and-.jpg" alt="AI Systems" />
-                </div>
-                <div className="service-content">
-                  <h3 className="service-title">Custom AI Systems & Automation Assets</h3>
-                  <p className="service-description">
-                    Beyond bootcamps and consulting, we build and hand over concrete AI assets.
-                  </p>
-                  <ul className="service-list">
-                    <li>Custom AI Workspaces - Taskade, Notion, templates for specific workflows</li>
-                    <li>WhatsApp Automations - Lead capture, FAQ handling, daily digests</li>
-                    <li>Prompt Libraries - Role-specific and industry-specific playbooks</li>
-                  </ul>
-                  <div className="service-format">
-                    <strong>Deliverable:</strong> Reusable assets with documentation for sustainability
-                  </div>
+            <div className="service-card">
+              <div className="service-image">
+                <img src="/ai-automation-workflow-with-connected-systems-and-.jpg" alt="AI Systems" />
+              </div>
+              <div className="service-content">
+                <h3 className="service-title">Custom AI Systems & Automation Assets</h3>
+                <p className="service-description">
+                  Beyond bootcamps and consulting, we build and hand over concrete AI assets.
+                </p>
+                <ul className="service-list">
+                  <li>Custom AI Workspaces - Taskade, Notion, templates for specific workflows</li>
+                  <li>WhatsApp Automations - Lead capture, FAQ handling, daily digests</li>
+                  <li>Prompt Libraries - Role-specific and industry-specific playbooks</li>
+                </ul>
+                <div className="service-format">
+                  <strong>Deliverable:</strong> Reusable assets with documentation for sustainability
                 </div>
               </div>
-            </SwiperSlide>
-          </Swiper>
+            </div>
+          </div>
         </div>
       </section>
 
