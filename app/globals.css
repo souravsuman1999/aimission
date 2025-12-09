@@ -705,7 +705,7 @@ img {
 
 .services-grid {
   display: flex;
-  gap: 24px;
+  gap: 16px;
   margin-top: 32px;
 }
 
@@ -715,6 +715,7 @@ img {
   border-radius: 12px;
   overflow: hidden;
   transition: all 0.3s ease;
+  flex: 1;
 }
 
 .service-card:hover {
@@ -1315,6 +1316,11 @@ img {
     display: block;
   }
 
+  .services-grid{
+    flex-direction: column;
+    gap: 24px;
+  }
+
   .trusted-card:hover{
     box-shadow: none;
   }
@@ -1467,7 +1473,7 @@ img {
   }
   
   .trusted-card-content {
-    padding: 20px;
+    padding: 20px 16px;
   }
   
   .trusted-card-heading {
