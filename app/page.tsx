@@ -599,8 +599,8 @@ export default function HomePage() {
             <div className="cta-buttons">
 
               <div className="contact-info">
-                <a href="mailto:contact@aimission.co" className="contact-link">
-                  contact@aimission.co
+                <a href="mailto:Info@aimission.co" className="contact-link">
+                  Info@aimission.co
                 </a>
               </div>
             </div>
