@@ -556,16 +556,16 @@
     --popover-foreground: lab(2.75381% 0 0);
     --primary: lab(7.78201% -.0000149012 0);
     --primary-foreground: lab(98.26% 0 0);
-    --secondary: lab(96.52% -.0000596046 0);
+    --secondary: lab(96.52% -.0000298023 .0000119209);
     --secondary-foreground: lab(7.78201% -.0000149012 0);
-    --muted: lab(96.52% -.0000596046 0);
+    --muted: lab(96.52% -.0000298023 .0000119209);
     --muted-foreground: lab(48.496% 0 0);
-    --accent: lab(96.52% -.0000596046 0);
+    --accent: lab(96.52% -.0000298023 .0000119209);
     --accent-foreground: lab(7.78201% -.0000149012 0);
     --destructive: lab(48.4493% 77.4328 61.5452);
     --destructive-foreground: lab(48.4493% 77.4328 61.5452);
-    --border: lab(90.952% -.0000596046 0);
-    --input: lab(90.952% -.0000596046 0);
+    --border: lab(90.952% 0 -.0000119209);
+    --input: lab(90.952% 0 -.0000119209);
     --ring: lab(66.128% -.0000298023 .0000119209);
     --chart-1: lab(57.1026% 64.2584 89.8886);
     --chart-2: lab(55.0223% -41.0774 -3.90277);
@@ -576,9 +576,9 @@
     --sidebar-foreground: lab(2.75381% 0 0);
     --sidebar-primary: lab(7.78201% -.0000149012 0);
     --sidebar-primary-foreground: lab(98.26% 0 0);
-    --sidebar-accent: lab(96.52% -.0000596046 0);
+    --sidebar-accent: lab(96.52% -.0000298023 .0000119209);
     --sidebar-accent-foreground: lab(7.78201% -.0000149012 0);
-    --sidebar-border: lab(90.952% -.0000596046 0);
+    --sidebar-border: lab(90.952% 0 -.0000119209);
     --sidebar-ring: lab(66.128% -.0000298023 .0000119209);
   }
 }
@@ -628,29 +628,29 @@
     --popover-foreground: lab(98.26% 0 0);
     --primary: lab(98.26% 0 0);
     --primary-foreground: lab(7.78201% -.0000149012 0);
-    --secondary: lab(15.204% 0 0);
+    --secondary: lab(15.204% 0 -.00000596046);
     --secondary-foreground: lab(98.26% 0 0);
-    --muted: lab(15.204% 0 0);
+    --muted: lab(15.204% 0 -.00000596046);
     --muted-foreground: lab(66.128% -.0000298023 .0000119209);
-    --accent: lab(15.204% 0 0);
+    --accent: lab(15.204% 0 -.00000596046);
     --accent-foreground: lab(98.26% 0 0);
     --destructive: lab(28.5139% 44.5539 29.0463);
     --destructive-foreground: lab(55.4814% 75.0732 48.8528);
-    --border: lab(15.204% 0 0);
-    --input: lab(15.204% 0 0);
+    --border: lab(15.204% 0 -.00000596046);
+    --input: lab(15.204% 0 -.00000596046);
     --ring: lab(34.924% 0 0);
     --chart-1: lab(36.9089% 35.0961 -85.6872);
     --chart-2: lab(66.9756% -58.27 19.5419);
     --chart-3: lab(72.7183% 31.8672 97.9407);
     --chart-4: lab(52.0183% 66.11 -78.2316);
-    --chart-5: lab(56.101% 79.4329 31.4532);
+    --chart-5: lab(56.101% 79.4328 31.4532);
     --sidebar: lab(7.78201% -.0000149012 0);
     --sidebar-foreground: lab(98.26% 0 0);
     --sidebar-primary: lab(36.9089% 35.0961 -85.6872);
     --sidebar-primary-foreground: lab(98.26% 0 0);
-    --sidebar-accent: lab(15.204% 0 0);
+    --sidebar-accent: lab(15.204% 0 -.00000596046);
     --sidebar-accent-foreground: lab(98.26% 0 0);
-    --sidebar-border: lab(15.204% 0 0);
+    --sidebar-border: lab(15.204% 0 -.00000596046);
     --sidebar-ring: lab(34.924% 0 0);
   }
 }
@@ -1020,6 +1020,137 @@ img {
   padding: 16px 40px;
   font-size: 17px;
   font-weight: 600;
+}
+
+.video-reel-section {
+  background: #0a0a0a;
+  border-top: 1px solid #ffffff1f;
+  border-bottom: 1px solid #ffffff1f;
+  padding: 80px 0;
+}
+
+.video-reel-container {
+  align-items: center;
+  gap: 48px;
+  display: flex;
+}
+
+.video-reel-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.video-reel-title {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.video-reel-description {
+  color: #ffffffbf;
+  margin-bottom: 28px;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.video-reel-wrap {
+  aspect-ratio: 9 / 16;
+  cursor: pointer;
+  background: #000;
+  border: 2px solid #ffffff2e;
+  border-radius: 16px;
+  flex: 0 420px;
+  max-width: 100%;
+  max-height: 560px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px #0003;
+}
+
+.video-reel-overlay {
+  z-index: 1;
+  pointer-events: none;
+  background: #00000073;
+  position: absolute;
+  inset: 0;
+}
+
+.video-reel-preview {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+.video-reel-play-icon {
+  z-index: 2;
+  pointer-events: none;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  inset: 0;
+}
+
+.video-reel-play-icon svg {
+  transition: transform .2s;
+}
+
+.video-reel-wrap:hover .video-reel-play-icon svg {
+  transform: scale(1.08);
+}
+
+.video-popup-backdrop {
+  z-index: 1000;
+  background: #000000e6;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  display: flex;
+  position: fixed;
+  inset: 0;
+}
+
+.video-popup-box {
+  aspect-ratio: 9 / 16;
+  background: #000;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 420px;
+  max-height: 85vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-popup-close {
+  z-index: 3;
+  color: #fff;
+  cursor: pointer;
+  background: #0009;
+  border: none;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  transition: background .2s;
+  display: flex;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.video-popup-close:hover {
+  background: #000000d9;
+}
+
+.video-popup-video {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
 }
 
 .what-we-do-section {
@@ -1979,6 +2110,58 @@ img {
 
   .trusted-card-subheading {
     font-size: 14px;
+  }
+
+  .video-reel-section {
+    padding: 48px 0;
+  }
+
+  .video-reel-container {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .video-reel-content {
+    text-align: center;
+    order: 1;
+  }
+
+  .video-reel-wrap {
+    flex: none;
+    order: 2;
+    width: 100%;
+    max-height: 480px;
+  }
+
+  .video-reel-title {
+    font-size: 28px;
+  }
+
+  .video-reel-description {
+    font-size: 15px;
+  }
+
+  .video-reel-play-icon svg {
+    width: 56px;
+    height: 56px;
+  }
+
+  .video-reel-cta {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .video-reel-container {
+    gap: 32px;
+  }
+
+  .video-reel-title {
+    font-size: 32px;
+  }
+
+  .video-reel-wrap {
+    flex: 0 340px;
   }
 }
 

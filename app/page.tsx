@@ -1,12 +1,14 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 
 export default function HomePage() {
   // Refs for intersection observer
   const sectionsRef = useRef<(HTMLElement | null)[]>([])
+  const [videoPopupOpen, setVideoPopupOpen] = useState(false)
+  const popupVideoRef = useRef<HTMLVideoElement>(null)
 
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId)
@@ -32,7 +34,7 @@ export default function HomePage() {
   }
 
   useEffect(() => {
-    const observers = sectionsRef.current.map((section, index) => {
+    const observers = sectionsRef.current.map((section) => {
       if (!section) return null
 
       const observer = new IntersectionObserver(
@@ -54,6 +56,15 @@ export default function HomePage() {
       observers.forEach((observer) => observer?.disconnect())
     }
   }, [])
+
+  useEffect(() => {
+    if (!popupVideoRef.current) return
+    if (videoPopupOpen) {
+      popupVideoRef.current.play().catch(() => {})
+    } else {
+      popupVideoRef.current.pause()
+    }
+  }, [videoPopupOpen])
 
   return (
     <div className="main-wrapper">
@@ -111,6 +122,76 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Video Reel Section - left content, right video */}
+      <section className="video-reel-section">
+        <div className="container video-reel-container">
+          <div className="video-reel-content">
+            <h2 className="video-reel-title">See AI Mission in Action</h2>
+            <p className="video-reel-description">
+              Watch how we bring practical AI into classrooms and boardrooms. From faculty bootcamps to operational automation, see real impact from our seminars and workshops.
+            </p>
+            <button className="primary-button video-reel-cta" onClick={() => setVideoPopupOpen(true)}>
+              Watch full video
+            </button>
+          </div>
+          <div
+            className="video-reel-wrap"
+            onClick={() => setVideoPopupOpen(true)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => e.key === "Enter" && setVideoPopupOpen(true)}
+            aria-label="Play video"
+          >
+            <div className="video-reel-overlay" />
+            <video
+              className="video-reel-preview"
+              src="/images/aiseminar.mp4"
+              muted
+              loop
+              playsInline
+              autoPlay
+              aria-hidden
+            />
+            <div className="video-reel-play-icon">
+              <svg width="72" height="72" viewBox="0 0 72 72" fill="none" aria-hidden>
+                <circle cx="36" cy="36" r="36" fill="rgba(79, 70, 229, 0.9)" />
+                <path d="M30 24v24l18-12-18-12z" fill="white" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Video popup modal */}
+      {videoPopupOpen && (
+        <div
+          className="video-popup-backdrop"
+          onClick={() => setVideoPopupOpen(false)}
+          role="presentation"
+        >
+          <div className="video-popup-box" onClick={(e) => e.stopPropagation()}>
+            <button
+              className="video-popup-close"
+              onClick={() => setVideoPopupOpen(false)}
+              aria-label="Close video"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
+            <video
+              ref={popupVideoRef}
+              className="video-popup-video"
+              src="/images/aiseminar.mp4"
+              controls
+              autoPlay
+              loop
+              playsInline
+              onPlay={() => {}}
+            />
+          </div>
+        </div>
+      )}
 
       {/* Trusted By Companies Cards */}
       <section
